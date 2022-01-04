@@ -1,0 +1,28 @@
+project: cad-ml-attention
+name: classificationDA224
+method: grid
+metric:
+  goal: minimize
+  name: val_loss
+parameters:
+  batch_size:
+    values:
+      - 16
+      - 32
+      - 64
+  learning_rate:
+    values:
+      - 1e-4
+      - 3e-4
+      - 3e-5
+      - 1e-5
+  epochs:
+    values:
+      - 10
+      - 20
+      - 30
+      - 40
+  optimizer:
+    values:
+      - adamw
+program: vit-sweep-train-DA.py
